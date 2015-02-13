@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="quidTimer">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuidTimer</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+
+    <div class="row">
+      <div class="small-12 columns">
+        <h1> Quidditch Timer </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="panel">
+        <h1>
+          <timer autostart="false">{{mminutes}}:{{sseconds}}:{{millis % 1000}}</timer>
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Size Classes: [tiny small large] -->
+      <!-- Radius Classes: [radius round] -->
+      <!-- Color Classes: [secondary success alert] -->
+      <!-- Disabled Class: disabled -->
+
+      <button href="#" ng-disabled="timerRunning" ng-click="startTimer()" class="button">Start</a>
+      <button href="#" ng-disabled="!timerRunning" ng-click="stopTimer()" class="button alert">Stop</a>
+
+    </div>
+
+
+    <!-- scripts -->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angular-timer.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
