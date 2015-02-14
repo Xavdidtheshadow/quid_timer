@@ -4,6 +4,7 @@ var app = angular.module('quidTimer', [])
     $scope.message = 'hiiiii';
     $scope.init = true;
     $scope.timerRunning = false;
+    $scope.add = true;
 
     $scope.teams = {};
     
@@ -21,6 +22,15 @@ var app = angular.module('quidTimer', [])
             name: name,
             box: []
         };
+    };
+
+    $scope.adjustScore = function(t) {
+        if ($scope.add) {
+            $scope.teams[t].score += 10;
+        }
+        else {
+            $scope.teams[t].score -= 10;
+        }
     };
 
     // $scope.startTimer = function() {
