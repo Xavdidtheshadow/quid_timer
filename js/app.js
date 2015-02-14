@@ -1,9 +1,27 @@
-var app = angular.module('quidTimer', ['timer'])
+var app = angular.module('quidTimer', [])
 
   .controller('MainCtrl', ['$scope', function($scope){
     $scope.message = 'hiiiii';
     $scope.init = true;
     $scope.timerRunning = false;
+
+    $scope.teams = {};
+    
+    $scope.inputs = {
+        
+    };
+
+    $scope.createPlayer = function(){
+
+    };
+
+    $scope.createTeam = function(name){
+        return {
+            score: 0,
+            name: '',
+            box: []
+        };
+    };
 
     // $scope.startTimer = function() {
     //   if ($scope.init) {
