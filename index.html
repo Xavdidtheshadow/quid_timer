@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuidTimer</title>
     <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css">
     <script src="js/vendor/modernizr.js"></script>
   </head>
 
@@ -16,36 +17,40 @@
       </div>
     </div>
 
+    <hr>
+
     <div class="row">
-      <div class="panel">
-        <h1>
-          THIS COULD BE A TIMER
-          <!-- failed versions -->
-          <!-- <timer interval="1000" autostart="false">{{mminutes}}:{{sseconds}}</timer> -->
-          <!-- <span id="runner"></span> -->
-        </h1>
+      <div class="small-6 columns" >
+        <h2 ng-show="teams.a"> {{teams.a.name}} </h2>
+        <div class="row collapse" ng-show="!teams.a">
+          <form>
+            <div class="small-10 columns">
+              <input ng-model="inputs.teamAName" type="text" placeholder="Team A Name" />
+            </div>
+            <div class="small-2 columns">
+              <input type="submit" ng-click="createTeam(inputs.teamAName, 'a')" class="button prefix" value="Go">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="small-6 columns" >
+        <h2 ng-show="teams.b"> {{teams.b.name}} </h2>
+        <div class="row collapse" ng-show="!teams.b">
+          <form>
+            <div class="small-10 columns">
+              <input ng-model="inputs.teamBName" type="text" placeholder="Team B Name" />
+            </div>
+            <div class="small-2 columns">
+              <input type="submit" ng-click="createTeam(inputs.teamBName, 'b')" class="button prefix" value="Go">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
-    {{ inputs }}
-    {{ teams }}
 
-    <div class="row">
-      <div class="small-6 columns">
-        <label>Team A
-          <input ng-model="inputs.teamAName" type="text" placeholder="Michigan Quidditch" />
-        </label>
-      </div>
-      <!-- Size Classes: [tiny small large] -->
-      <!-- Radius Classes: [radius round] -->
-      <!-- Color Classes: [secondary success alert] -->
-      <!-- Disabled Class: disabled -->
-
-      <!-- <button href="#" id="start" ng-disabled="timerRunning" ng-click="startTimer()" class="button">Start</a>
-      <button href="#" id="stop" ng-disabled="!timerRunning" ng-click="stopTimer()" class="button alert">Stop</a> -->
-
-    </div>
-
+    
     
 
 

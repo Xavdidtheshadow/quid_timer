@@ -15,10 +15,10 @@ var app = angular.module('quidTimer', [])
 
     };
 
-    $scope.createTeam = function(name){
-        return {
+    $scope.createTeam = function(name, t){
+        $scope.teams[t] = {
             score: 0,
-            name: '',
+            name: name,
             box: []
         };
     };
