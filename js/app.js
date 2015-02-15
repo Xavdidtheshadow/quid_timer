@@ -1,4 +1,4 @@
-var app = angular.module('quidTimer', [])
+var app = angular.module('quidTimer', ['timer'])
 
   .controller('MainCtrl', ['$scope', function($scope){
     $scope.message = 'hiiiii';
@@ -42,10 +42,12 @@ var app = angular.module('quidTimer', [])
     //     $scope.$broadcast('timer-resume');
     //   }
     //   $scope.timerRunning = true;  
+    //   // $scope.$digest();
     // };
 
     // $scope.stopTimer = function() {
     //   $scope.$broadcast('timer-stop');
     //   $scope.timerRunning = false;
+    //   $scope.$digest();
     // };
   }]);
