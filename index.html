@@ -2,6 +2,7 @@
 <html class="no-js" lang="en" ng-app="quidTimer">
   <head>
     <meta charset="utf-8" />
+    <!-- stay out and flat- basically a fake mobile app -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=0" />
     <title>QuidTimer</title>
     <link rel="stylesheet" href="css/foundation.css" />
@@ -68,9 +69,9 @@
     </div>
 
     <!-- BUTTONS -->
-    <div class="row" ng-show="teams.a && teams.b">
+    <div class="row fat" ng-show="teams.a && teams.b">
       <div class="small-12 medium-4 columns">
-        <button clsss="button"  ng-click="adjustScore('a')">{{teams.a.name}} {{add ? '+' : '-'}}10</button>
+          <button clsss="button" ng-click="adjustScore('a')">{{teams.a.name}} {{add ? '+' : '-'}}10</button>
       </div>
 
       <div class="small-12 medium-4 columns adder">
@@ -86,11 +87,6 @@
         <button clsss="button" ng-click="adjustScore('b')">{{teams.b.name}} {{add ? '+' : '-'}}10</button>
       </div>
     </div>
-
-
-    
-    
-
 
     <!-- scripts -->
     <script src="js/vendor/jquery.js"></script>
