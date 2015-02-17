@@ -33,21 +33,21 @@ var app = angular.module('quidTimer', ['timer'])
         }
     };
 
-    // $scope.startTimer = function() {
-    //   if ($scope.init) {
-    //     $scope.$broadcast('timer-start');
-    //     $scope.init = false;
-    //   }
-    //   else {
-    //     $scope.$broadcast('timer-resume');
-    //   }
-    //   $scope.timerRunning = true;  
-    //   // $scope.$digest();
-    // };
+    $scope.startTimer = function() {
+      if ($scope.init) {
+        $scope.$broadcast('timer-start');
+        $scope.init = false;
+      }
+      else {
+        $scope.$broadcast('timer-resume');
+      }
+      $scope.timerRunning = true;  
+      // $scope.$digest();
+    };
 
-    // $scope.stopTimer = function() {
-    //   $scope.$broadcast('timer-stop');
-    //   $scope.timerRunning = false;
-    //   $scope.$digest();
-    // };
+    $scope.stopTimer = function() {
+      $scope.$broadcast('timer-stop');
+      $scope.timerRunning = false;
+      // $scope.$digest();
+    };
   }]);

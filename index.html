@@ -18,7 +18,7 @@
       </div>
     </div>
 
-<!--     <div class="row">
+    <div class="row">
       <div class="panel">
         <h1>
           <timer autostart="false" duration="1">{{mminutes}}:{{sseconds}}:{{millis % 1000}}</timer>
@@ -29,7 +29,7 @@
     <div class="row">
       <button href="#" ng-disabled="timerRunning" ng-click="startTimer()" class="button">Start</a>
       <button href="#" ng-disabled="!timerRunning" ng-click="stopTimer()" class="button alert">Stop</a>
-    </div> -->
+    </div>
 
     <!-- NAMES AND SCORES -->
     <div class="row">
@@ -93,9 +93,12 @@
     <script src="js/foundation.min.js"></script>
     <script src="js/vendor/angular.min.js"></script>
     <script src="js/vendor/angular-timer.min.js"></script>
+    <script src="js/vendor/fastclick.min.js"></script>
     <script src="js/app.js"></script>
     <script>
       // $(document).foundation();
+      var attachFastClick = Origami.fastclick;
+      attachFastClick(document.body);
     </script>
   </body>
 </html>
