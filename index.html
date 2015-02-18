@@ -11,24 +11,11 @@
   </head>
 
   <body ng-controller="MainCtrl">
-
+    <!-- TITLE -->
     <div class="row">
       <div class="small-12 columns">
         <h1> Quidditch Timer </h1>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="panel">
-        <h1>
-          <timer autostart="false" duration="1">{{mminutes}}:{{sseconds}}:{{millis % 1000}}</timer>
-        </h1>
-      </div>
-    </div>
-
-    <div class="row">
-      <button href="#" ng-disabled="timerRunning" ng-click="startTimer()" class="button">Start</a>
-      <button href="#" ng-disabled="!timerRunning" ng-click="stopTimer()" class="button alert">Stop</a>
     </div>
 
     <!-- NAMES AND SCORES -->
@@ -68,23 +55,45 @@
       </div>
     </div>
 
-    <!-- BUTTONS -->
-    <div class="row fat" ng-show="teams.a && teams.b">
-      <div class="small-12 medium-4 columns">
-          <button clsss="button" ng-click="adjustScore('a')">{{teams.a.name}} {{add ? '+' : '-'}}10</button>
-      </div>
 
-      <div class="small-12 medium-4 columns adder">
-        <div class="switch">
-          <h5 class="left">{{add ? '+' : '-'}}</h5>
-          <input id="add" type="checkbox" ng-model="add">
-          <label for="add">ADD</label>
-
+    <div class="ready" ng-show="teams.a && teams.b">
+      <!-- TIMER -->
+      <div class="row">
+        <div class="panel">
+          <h1>
+            <timer autostart="false" duration="1">{{mminutes}}:{{sseconds}}:{{millis % 1000}}</timer>
+          </h1>
         </div>
       </div>
 
-      <div class="small-12 medium-4 end columns">
-        <button clsss="button" ng-click="adjustScore('b')">{{teams.b.name}} {{add ? '+' : '-'}}10</button>
+    
+      <div class="row">
+        <div class="small-3 columns">
+          <button href="#" ng-disabled="timerRunning" ng-click="startTimer()" class="button">Start</button>
+        </div>
+        <div class="small-3 columns end">
+          <button href="#" ng-disabled="!timerRunning" ng-click="stopTimer()" class="button alert">Stop</button>
+        </div>
+      </div>
+      
+
+      <!-- POINT BUTTONS -->
+      <div class="row fat">
+        <div class="small-12 medium-4 columns">
+            <button clsss="button" ng-click="adjustScore('a')">{{teams.a.name}} {{add ? '+' : '-'}}10</button>
+        </div>
+
+        <div class="small-12 medium-4 columns adder">
+          <div class="switch">
+            <h5 class="left">{{add ? '+' : '-'}}</h5>
+            <input id="add" type="checkbox" ng-model="add">
+            <label for="add">ADD</label>
+          </div>
+        </div>
+
+        <div class="small-12 medium-4 end columns">
+          <button clsss="button" ng-click="adjustScore('b')">{{teams.b.name}} {{add ? '+' : '-'}}10</button>
+        </div>
       </div>
     </div>
 
