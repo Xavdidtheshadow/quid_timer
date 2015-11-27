@@ -9,12 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-  
   @IBOutlet weak var teamAScore: UILabel!
   @IBOutlet weak var teamBScore: UILabel!
 
   @IBOutlet weak var teamAName: UILabel!
   @IBOutlet weak var teamBName: UILabel!
+  
+  @IBOutlet weak var timerLabel: UILabel!
+  
+  var timer = NSTimer()
   
 //  var game: Scoreboard?
   var game = Scoreboard(teamAName: "A", teamBName: "B")

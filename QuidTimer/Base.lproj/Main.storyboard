@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuidTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -74,15 +73,9 @@
                                 <state key="normal" title="-"/>
                                 <connections>
                                     <action selector="changeScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mws-Xr-UzC"/>
+                                    <segue destination="bVb-Jm-Vfo" kind="presentation" id="8aF-bx-GyA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNs-GZ-uAp">
-                                <rect key="frame" x="229" y="320" width="131" height="58"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J1-tm-6D3">
                                 <rect key="frame" x="51" y="71" width="92" height="21"/>
                                 <animations/>
@@ -100,6 +93,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNs-GZ-uAp">
+                                <rect key="frame" x="235.5" y="342.5" width="130.5" height="57.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -111,6 +111,7 @@
                             <constraint firstItem="DEl-2X-v5K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="P4X-AS-9UN"/>
                             <constraint firstItem="jBk-CM-YyE" firstAttribute="top" secondItem="Yfr-Qm-kWe" secondAttribute="bottom" constant="40" id="TQC-8d-dID"/>
                             <constraint firstItem="Wul-Zg-Ftd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="ceH-M5-Urb"/>
+                            <constraint firstItem="PNs-GZ-uAp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dmT-IE-ziy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fmU-xi-jdw" secondAttribute="trailing" constant="31.5" id="iSv-WP-k9o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FSO-sC-CsC" secondAttribute="trailing" constant="40" id="lsk-0g-JxJ"/>
                             <constraint firstItem="fmU-xi-jdw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="51" id="nxS-Ty-s1o"/>
@@ -118,6 +119,7 @@
                             <constraint firstItem="y8p-TG-4ke" firstAttribute="top" secondItem="Wul-Zg-Ftd" secondAttribute="bottom" constant="40" id="pT4-RF-oOl"/>
                             <constraint firstItem="Yfr-Qm-kWe" firstAttribute="top" secondItem="fmU-xi-jdw" secondAttribute="bottom" constant="8" id="qGy-YR-lOP"/>
                             <constraint firstItem="Yfr-Qm-kWe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="roo-fA-eHx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PNs-GZ-uAp" secondAttribute="bottom" constant="200" id="tJ8-BQ-zC4"/>
                             <constraint firstItem="8J1-tm-6D3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="51" id="tpR-fZ-W5W"/>
                             <constraint firstItem="y8p-TG-4ke" firstAttribute="leading" secondItem="DEl-2X-v5K" secondAttribute="trailing" constant="13" id="wUC-1J-iVH"/>
                             <constraint firstItem="FSO-sC-CsC" firstAttribute="top" secondItem="Yfr-Qm-kWe" secondAttribute="bottom" constant="40" id="xI5-4e-K3e"/>
@@ -131,10 +133,90 @@
                         <outlet property="teamAScore" destination="Wul-Zg-Ftd" id="Xdx-UP-UjP"/>
                         <outlet property="teamBName" destination="fmU-xi-jdw" id="b2l-3R-wb5"/>
                         <outlet property="teamBScore" destination="Yfr-Qm-kWe" id="xJN-Cg-kFg"/>
+                        <outlet property="timerLabel" destination="PNs-GZ-uAp" id="bhU-4H-X6U"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408" y="295"/>
+            <point key="canvasLocation" x="380" y="280"/>
+        </scene>
+        <!--Card Detail View Controller-->
+        <scene sceneID="zVS-Gd-EvT">
+            <objects>
+                <viewController id="snn-KF-ljB" customClass="CardDetailViewController" customModule="QuidTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AJE-lW-BEj"/>
+                        <viewControllerLayoutGuide type="bottom" id="gAw-RT-P3x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kaE-un-qcf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omL-vG-kDp">
+                                <rect key="frame" x="141" y="72" width="170" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbb-RS-MCY">
+                                <rect key="frame" x="20" y="72" width="113" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="VCD-VO-nxG">
+                                <rect key="frame" x="20" y="110" width="200" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Blue"/>
+                                    <segment title="Yellow"/>
+                                    <segment title="Red"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sRR-lg-app">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="N0M-eb-Y9B">
+                            <connections>
+                                <action selector="cancel" destination="snn-KF-ljB" id="bVj-9W-fQp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="gwK-hE-u22">
+                            <connections>
+                                <action selector="done" destination="snn-KF-ljB" id="a9U-Gh-qKO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playerNumber" destination="omL-vG-kDp" id="WMt-0N-8g4"/>
+                        <outlet property="severitySelector" destination="VCD-VO-nxG" id="bAj-Jd-tzX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3V-2h-xYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="280"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="duV-Cz-kWz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bVb-Jm-Vfo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s1W-yB-Oyi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="snn-KF-ljB" kind="relationship" relationship="rootViewController" id="xlc-ke-Dag"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gzm-xd-9qm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112" y="280"/>
         </scene>
     </scenes>
 </document>

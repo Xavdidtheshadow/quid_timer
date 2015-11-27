@@ -6,22 +6,42 @@
 //  Copyright © 2015 DB. All rights reserved.
 //
 
+import UIKit
+
 enum CardColor: Int {
-  case Blue
-  case Yello
-  case Red
+  case Blue, Yellow, Red
+  
+  // enums correspond to UIColors
+  func color() -> UIColor {
+    switch(self) {
+      case .Blue:
+        return .blueColor()
+      case .Yellow:
+        // this is hard to make look good
+        // current hex: #FFB900
+        return UIColor(red:1.00, green:0.73, blue:0.00, alpha:1.0)
+      case .Red:
+        return .redColor()
+    }
+  }
 }
 
-class Card {
-  var name: String
-  var timestamp: Float
-  var color: CardColor
+class Card: NSObject {
+  //  jersey number
+  var playerNumber = ""
+  var timestamp: Double = 0
+  var color: CardColor?
   
-  init(name: String, timestamp: Float , color: CardColor) {
-    self.name = name
+  override init() {
+    super.init()
+  }
+  
+  init(playerNumber: String, timestamp: Double , color: CardColor) {
+    self.playerNumber = playerNumber
     // I believe this is a float? haven't done the timer yet
     self.timestamp = timestamp
     self.color = color
+    super.init()
   }
 }
 
@@ -47,6 +67,7 @@ class Scorecard {
 class Scoreboard {
   var teamA: Scorecard
   var teamB: Scorecard
+  var duration = 0.0
   
   init(teamAName: String, teamBName: String) {
     teamA = Scorecard(name: teamAName)
