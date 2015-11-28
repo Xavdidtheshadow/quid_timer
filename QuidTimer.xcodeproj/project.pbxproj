@@ -16,6 +16,7 @@
 		636287AA1C026D5F0033B0C3 /* QuidTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636287A91C026D5F0033B0C3 /* QuidTimerUITests.swift */; };
 		636287BA1C027F6E0033B0C3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636287B91C027F6E0033B0C3 /* Models.swift */; };
 		6380020E1C08262600B78BE4 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380020D1C08262600B78BE4 /* CardDetailViewController.swift */; };
+		63BA2A8D1C09915D00491E7E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BA2A8C1C09915D00491E7E /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		636287AB1C026D5F0033B0C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		636287B91C027F6E0033B0C3 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		6380020D1C08262600B78BE4 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		63BA2A8C1C09915D00491E7E /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				636287891C026D5F0033B0C3 /* AppDelegate.swift */,
 				6380020D1C08262600B78BE4 /* CardDetailViewController.swift */,
+				63BA2A8C1C09915D00491E7E /* DataModel.swift */,
 				636287B91C027F6E0033B0C3 /* Models.swift */,
 				6362878B1C026D5F0033B0C3 /* ViewController.swift */,
 				6362878D1C026D5F0033B0C3 /* Main.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BA2A8D1C09915D00491E7E /* DataModel.swift in Sources */,
 				636287BA1C027F6E0033B0C3 /* Models.swift in Sources */,
 				6380020E1C08262600B78BE4 /* CardDetailViewController.swift in Sources */,
 				6362878C1C026D5F0033B0C3 /* ViewController.swift in Sources */,

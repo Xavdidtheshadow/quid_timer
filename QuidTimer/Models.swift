@@ -26,29 +26,32 @@ enum CardColor: Int {
   }
 }
 
-class Card: NSObject {
+class Card {
   //  jersey number
   var playerNumber = ""
   var timestamp: Double = 0
   var color: CardColor?
+  // this should eventually only go in the non aCoder init
+  var id = DataModel.nextItemId()
+  var team = 0
   
-  override init() {
-    super.init()
-  }
+  init(){}
   
-  init(playerNumber: String, timestamp: Double , color: CardColor) {
+  init(playerNumber: String, timestamp: Double , color: CardColor, team: Int) {
     self.playerNumber = playerNumber
     // I believe this is a float? haven't done the timer yet
     self.timestamp = timestamp
     self.color = color
-    super.init()
+    self.team = team
   }
 }
 
 class Scorecard {
-  var name: String
+  var name = ""
   var score = 0
   var cards = [Card]()
+  
+  init(){}
   
   init(name: String) {
     self.name = name
@@ -65,12 +68,15 @@ class Scorecard {
 
 // MARK: Main Data Model
 class Scoreboard {
-  var teamA: Scorecard
-  var teamB: Scorecard
+  var teams = [Scorecard]()
   var duration = 0.0
   
+  init() {
+    
+  }
+  
   init(teamAName: String, teamBName: String) {
-    teamA = Scorecard(name: teamAName)
-    teamB = Scorecard(name: teamBName)
+    teams.append(Scorecard(name: teamAName))
+    teams.append(Scorecard(name: teamBName))
   }
 }

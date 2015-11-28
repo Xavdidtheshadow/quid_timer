@@ -18,14 +18,18 @@ class CardDetailViewController: UIViewController {
   
   @IBOutlet weak var playerNumber: UITextField!
   @IBOutlet weak var severitySelector: UISegmentedControl!
+  @IBOutlet weak var teamSelector: UISegmentedControl!
   
   var cardToEdit: Card?
 
   // this shouldn't be blank, but isn't initialized with a time
   var timestamp: Double?
   weak var delegate: CardDetailViewControllerDelegate?
+  var teams = [String]()
   
   @IBAction func done() {
+    // validate first!
+    
     if let card = cardToEdit {
       delegate?.cardDetailViewController(self, didFinishEditingItem: configureCard(card))
     } else {
@@ -37,6 +41,7 @@ class CardDetailViewController: UIViewController {
     card.playerNumber = playerNumber.text!
     card.timestamp = timestamp!
     card.color = colorForSeverity()
+    card.team = teamSelector.selectedSegmentIndex
     return card
   }
   
